@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_HOST=gateway01.ap-southeast-1.prod.aws.tidbcloud.com
+      - DB_PORT=4000
+      - DB_USER=teS1x9n61Xk9FhY.root
+      - DB_PASS=Hl9TkVnCxzmVftoe
+      - DB_NAME=test
+    restart: unless-stopped
